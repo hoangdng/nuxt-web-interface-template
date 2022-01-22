@@ -5,7 +5,7 @@
       <TopHeadingMenuItem
         v-for="menuItem in menuList"
         :key="menuItem.key"
-        class="level-item mx-2"
+        class="level-item ml-3"
         :icon="menuItem.icon"
         :alt-text="menuItem.key"
         :title="menuItem.title"
