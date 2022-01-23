@@ -19,6 +19,7 @@
     </nav>
 
     <section class="main-content columns">
+      <RightSideBar/>
       <aside class="column is-2 section">
         <p class="menu-label is-hidden-touch">General</p>
         <ul class="menu-list">
@@ -30,7 +31,7 @@
         </ul>
       </aside>
 
-      <div class="container column is-10">
+      <div class="container column is-10 test">
         <Nuxt />
       </div>
     </section>
@@ -38,8 +39,11 @@
 </template>
 
 <script>
+import RightSideBar from "~/components/RightSideBar/RightSideBar.vue";
+
 export default {
   name: 'DefaultLayout',
+  components: {RightSideBar},
   data() {
     return {
       items: [
@@ -58,3 +62,9 @@ export default {
   },
 }
 </script>
+
+<style>
+.test{
+  height: 1000px;
+}
+</style>
