@@ -12,7 +12,7 @@
       </div>
       <hr class="my-2"/>
       <div class="cart-items-box">
-        <ItemInCartCollapse
+        <RightSidebarCartItem
           v-for="(item, index) in itemsInCart"
           :key="index"
           :item-image="item.itemImage"
@@ -42,12 +42,12 @@
 </template>
 
 <script>
-import ItemInCartCollapse from "~/components/RightSideBar/ItemInCartCollapse";
+import RightSidebarCartItem from "~/components/TheRightSidebar/RightSidebarCartItem.vue";
 
 export default {
-  name: "CartFixed",
+  name: "RightSidebarCart",
   components: {
-    ItemInCartCollapse
+    RightSidebarCartItem
   },
   data() {
     return {

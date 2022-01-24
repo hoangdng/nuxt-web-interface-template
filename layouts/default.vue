@@ -19,7 +19,7 @@
     </nav>
 
     <section class="main-content columns">
-      <RightSideBar/>
+      <TheRightSidebar/>
       <aside class="column is-2 section">
         <p class="menu-label is-hidden-touch">General</p>
         <ul class="menu-list">
@@ -39,11 +39,11 @@
 </template>
 
 <script>
-import RightSideBar from "~/components/RightSideBar/RightSideBar.vue";
+import TheRightSidebar from "~/components/TheRightSidebar/TheRightSidebar.vue";
 
 export default {
   name: 'DefaultLayout',
-  components: {RightSideBar},
+  components: {TheRightSidebar},
   data() {
     return {
       items: [

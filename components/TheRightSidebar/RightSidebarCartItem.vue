@@ -25,7 +25,7 @@
 
 <script>
 export default {
-  name: "ItemInCartCollapse",
+  name: "RightSidebarCartItem",
   props: {
     itemImage: {
       type: String,
