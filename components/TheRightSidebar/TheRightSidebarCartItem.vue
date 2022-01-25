@@ -25,7 +25,7 @@
 
 <script>
 export default {
-  name: "RightSidebarCartItem",
+  name: "TheRightSidebarCartItem",
   props: {
     itemImage: {
       type: String,

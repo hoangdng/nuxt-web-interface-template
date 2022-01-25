@@ -39,11 +39,8 @@
 </template>
 
 <script>
-import TheRightSidebar from "~/components/TheRightSidebar/TheRightSidebar.vue";
-
 export default {
   name: 'DefaultLayout',
-  components: {TheRightSidebar},
   data() {
     return {
       items: [

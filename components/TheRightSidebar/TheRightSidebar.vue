@@ -1,17 +1,13 @@
 <template>
   <div class="hide-in-tablet-screen">
-    <RightSidebarCart/>
-    <RightSidebarSocials/>
+    <TheRightSidebarCart/>
+    <TheRightSidebarSocials/>
   </div>
 </template>
 
 <script>
-import RightSidebarCart from "~/components/TheRightSidebar/RightSidebarCart.vue";
-import RightSidebarSocials from "~/components/TheRightSidebar/RightSidebarSocials.vue";
-
 export default {
-  name: "TheRightSidebar",
-  components: {RightSidebarCart, RightSidebarSocials},
+  name: "TheRightSidebar"
 }
 </script>
 

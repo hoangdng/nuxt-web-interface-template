@@ -20,7 +20,7 @@
 
 <script>
 export default {
-  name: "RightSidebarSocials",
+  name: "TheRightSidebarSocials",
   data() {
     return {
       facebookProfileUrl: "",

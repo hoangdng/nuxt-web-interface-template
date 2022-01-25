@@ -12,7 +12,7 @@
       </div>
       <hr class="my-2"/>
       <div class="cart-items-box">
-        <RightSidebarCartItem
+        <TheRightSidebarCartItem
           v-for="(item, index) in itemsInCart"
           :key="index"
           :item-image="item.itemImage"
@@ -42,13 +42,8 @@
 </template>
 
 <script>
-import RightSidebarCartItem from "~/components/TheRightSidebar/RightSidebarCartItem.vue";
-
 export default {
-  name: "RightSidebarCart",
-  components: {
-    RightSidebarCartItem
-  },
+  name: "TheRightSidebarCart",
   data() {
     return {
       isCollapsedCartOpen: false,
