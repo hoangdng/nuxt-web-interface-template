@@ -19,6 +19,7 @@
         </nav>
 
     <section class="main-content columns">
+      <TheRightSidebar/>
       <aside class="column is-2 section">
         <p class="menu-label is-hidden-touch">General</p>
         <ul class="menu-list">
@@ -30,9 +31,8 @@
           </li>
         </ul>
       </aside>
-
-      <div class="container column is-10">
-        <Nuxt/>
+      <div class="container column is-10 test">
+        <Nuxt />
       </div>
     </section>
     <TheFooter/>
@@ -40,11 +40,8 @@
 </template>
 
 <script>
-import TheFooter from "@/components/TheFooter";
-
 export default {
   name: 'DefaultLayout',
-  components: {TheFooter},
   data() {
     return {
       items: [
@@ -63,3 +60,9 @@ export default {
   },
 }
 </script>
+
+<style>
+.test{
+  height: 1000px;
+}
+</style>

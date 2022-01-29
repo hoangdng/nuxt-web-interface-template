@@ -32,6 +32,9 @@ $dark-light: findLightColor($dark);
 $dark-dark: findDarkColor($dark);
 $dark-invert: findColorInvert($dark);
 
+$grey: #666666;
+$grey-light: #999999;
+
 // Lists and maps
 $custom-colors: null !default;
 $custom-shades: null !default;
