@@ -18,15 +18,20 @@
         No other internal dependency
       </card>
     </div>
+    <div class="columns is-mobile">
+      <TheHeading />
+    </div>
   </section>
 </template>
 
 <script>
 import Card from '~/components/Card'
+import TheHeading from "~/components/TheHeading/TheHeading";
 
 export default {
   name: 'IndexPage',
   components: {
+    TheHeading,
     Card,
   },
 }
