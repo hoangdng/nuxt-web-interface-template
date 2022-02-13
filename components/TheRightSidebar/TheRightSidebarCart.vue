@@ -90,8 +90,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../../assets/scss/customized-buefy";
-
 hr {
   background-color: $black;
   height: 3px;
