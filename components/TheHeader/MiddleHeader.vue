@@ -6,7 +6,7 @@
       </figure>
     </div>
     <div class="level-item has-text-weight-bold is-size-5 has-text-black">
-      <MiddleHeadingMenuItem
+      <MiddleHeaderMenuItem
         v-for="(menuItem, key) in menuList"
         :key="key"
         :menu-item="menuItem"
@@ -28,11 +28,11 @@
 </template>
 
 <script>
-import MiddleHeadingMenuItem from '~/components/TheHeading/MiddleHeadingMenuItem';
+import MiddleHeaderMenuItem from '~/components/TheHeader/MiddleHeaderMenuItem';
 
 export default {
-  name: 'MiddleHeading',
-  components: { MiddleHeadingMenuItem },
+  name: 'MiddleHeader',
+  components: { MiddleHeaderMenuItem },
   data() {
     return {
       menuList: [

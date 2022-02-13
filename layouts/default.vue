@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TheHeading />
+    <TheHeader />
 
     <section class="main-content columns">
       <TheRightSidebar/>
@@ -23,10 +23,10 @@
 </template>
 
 <script>
-import TheHeading from "~/components/TheHeading/TheHeading";
+import TheHeader from "~/components/TheHeader/TheHeader";
 export default {
   name: 'DefaultLayout',
-  components: { TheHeading },
+  components: { TheHeader },
   data() {
     return {
       items: [

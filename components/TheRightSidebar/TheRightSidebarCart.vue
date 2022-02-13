@@ -90,7 +90,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "assets/customized-buefy.scss";
+@import "../../assets/scss/customized-buefy";
 
 hr {
   background-color: $black;

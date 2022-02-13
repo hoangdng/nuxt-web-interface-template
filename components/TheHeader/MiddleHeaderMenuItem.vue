@@ -40,11 +40,11 @@
 </template>
 
 <script>
-import MenuThumbnail from '~/components/TheHeading/TheHeadingMenuLists/MenuThumbnail'
-import MenuList from '~/components/TheHeading/TheHeadingMenuLists/MenuList'
+import MenuThumbnail from '~/components/TheHeader/TheHeaderMenuLists/MenuThumbnail'
+import MenuList from '~/components/TheHeader/TheHeaderMenuLists/MenuList'
 
 export default {
-  name: 'MiddleHeadingMenuItem',
+  name: 'MiddleHeaderMenuItem',
   components: { MenuThumbnail, MenuList },
   props: {
     menuItem: {
