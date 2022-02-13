@@ -3,6 +3,7 @@
     <TheHeading />
 
     <section class="main-content columns">
+      <TheRightSidebar/>
       <aside class="column is-2 section">
         <p class="menu-label is-hidden-touch">General</p>
         <ul class="menu-list">
@@ -14,7 +15,7 @@
         </ul>
       </aside>
 
-      <div class="container column is-10">
+      <div class="container column is-10 test">
         <Nuxt />
       </div>
     </section>
@@ -44,3 +45,9 @@ export default {
   },
 }
 </script>
+
+<style>
+.test{
+  height: 1000px;
+}
+</style>
