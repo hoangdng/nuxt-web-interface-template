@@ -1,60 +1,13 @@
 <template>
 <div>
-  <div class="columns">
-    <div class="column is-flex is-flex-direction-column">
-      <a href="#">NỔI BẬT</a>
-      <a>&nbsp;</a>
-      <a href=""></a>
-      <a href="/product-list?gender=men&amp;category=&amp;attribute=best-seller">Best Seller</a>
-      <a href="/product-list?gender=men&amp;category=&amp;attribute=new-arrival">New Arrival</a>
-      <a href="/product-list?gender=men&amp;category=&amp;attribute=sale-off">Sale off</a>
-      <a>&nbsp;</a>
-      <a href="#">Bộ sưu tập</a>
-      <a href="https://ananas.vn/product-list?gender=&amp;category=&amp;attribute=ruler">Urbas Ruler</a>
-      <a href="https://ananas.vn/product-list?gender=&amp;category=&amp;attribute=track-6-class-e">Track 6 Class E</a>
-      <a href="https://ananas.vn/product-list?gender=&amp;category=&amp;attribute=flannel-pack">Vintas Flannel</a>
-      <a>&nbsp;</a>
-      <a href="#">Collaboration</a>
-      <a>&nbsp;</a>
-    </div>
-    <div class="column is-flex is-flex-direction-column">
-      <a href="#">GIÀY</a>
+  <div class="columns is-justify-content-center mt-4 mb-5 is-size-6 has-text-weight-normal">
+    <div v-for="(menuListItem, menuListItemKey) in menuList" :key="`menu-list-item-${menuListItemKey}`" class="column is-3 is-flex is-flex-direction-column">
+      <a class="menu-list-title is-size-4 has-text-weight-bold" href="#">{{ menuListItem.title }}</a>
 
-      <a>&nbsp;</a>
-      <a href="#">Dòng sản phẩm</a>
-      <a href="/product-list?gender=men&amp;category=&amp;attribute=basas">Basas</a>
-      <a href="/product-list?gender=men&amp;category=&amp;attribute=vintas">Vintas</a>
-      <a href="/product-list?gender=men&amp;category=&amp;attribute=urbas">Urbas</a>
-      <a href="/product-list?gender=men&amp;category=&amp;attribute=pattas">Pattas</a>
-      <a href="/product-list?gender=men&amp;category=&amp;attribute=creas">Creas</a>
-      <a href="/product-list?gender=men&amp;category=&amp;attribute=track-6">Track 6</a>
-      <a>&nbsp;</a>
-      <a href="#">Style</a>
-      <a href="/product-list?gender=men&amp;category=&amp;attribute=high-top?gender=men&amp;category=&amp;attribute=high-top">High Top</a>
-      <a href="/product-list">Low Top</a>
-      <a href="/product-list?gender=men&amp;category=&amp;attribute=slip-on">Slip-on</a>
-      <a>&nbsp;</a>
-      <a href="/product-list?gender=men&amp;category=shoes&amp;attribute=">Tất cả giày</a>
-      <a>&nbsp;</a>
-    </div>
-    <div class="column is-flex is-flex-direction-column">
-      <a href="/product-list?gender=men&amp;category=top,bottom,accessories&amp;attribute=" class="title">THỜI TRANG &amp; PHỤ KIỆN</a>
-
-      <a>&nbsp;</a>
-      <a href="#">Nửa trên</a>
-      <a href="/product-list?gender=men&amp;category=&amp;attribute=basic-tee-tron">Basic Tee</a>
-      <a href="/product-list/?gender=&amp;category=&amp;attribute=graphic-tee">Graphic tee</a>
-      <a href="/product-list?gender=&amp;category=&amp;attribute=sweatshirt">Sweatshirt</a>
-      <a href="/product-list?gender=&amp;category=&amp;attribute=hoodie">Hoodie</a>
-      <a>&nbsp;</a>
-      <a href="#">Phụ kiện</a>
-      <a href="/product-list?gender=men&amp;category=&amp;attribute=hat">Nón</a>
-      <a href="/product-list?gender=men&amp;category=&amp;attribute=shoelaces">Dây giày</a>
-      <a href="/product-list?gender=men&amp;category=&amp;attribute=socks">Vớ</a>
-      <a href="/product-list?gender=men&amp;category=&amp;attribute=backpack">Ba lô &amp; Túi</a>
-      <a>&nbsp;</a>
-      <a href="/product-list?gender=men&amp;category=top,bottom,accessories&amp;attribute=">Xem tất cả</a>
-      <a>&nbsp;</a>
+      <template v-for="(group, groupKey) in menuListItem.groups">
+        <a :key="`group-key-${menuListItemKey}-${groupKey}`" class="menu-list-subtitle menu-list-item has-text-weight-bold mt-5" href="#">{{ group.subtitle }}</a>
+        <a v-for="(elem, elemKey) in group.contents" :key="`group-item-${menuListItemKey}-${groupKey}-${elemKey}`" class="menu-list-item" href="#">{{ elem.text }}</a>
+      </template>
     </div>
   </div>
 </div>
@@ -62,10 +15,163 @@
 
 <script>
 export default {
-  name: "MenuList"
+  name: "MenuList",
+  data() {
+    return {
+      menuList: [
+        {
+          title: "NỔI BẬT",
+          groups: [
+            {
+              subtitle: "",
+              contents: [
+                {
+                  text: "Best seller"
+                },
+                {
+                  text: "New Arrival"
+                },
+                {
+                  text: "Sale off"
+                }
+              ]
+            },
+            {
+              subtitle: "Bộ sưu tập",
+              contents: [
+                {
+                  text: "Urbas Ruler"
+                },
+                {
+                  text: "Track 6 Class E"
+                },
+                {
+                  text: "Vintas Flannel"
+                }
+              ]
+            },
+            {
+              subtitle: "Collaboration",
+              contents: []
+            }
+          ]
+        },
+        {
+          title: "GIÀY",
+          groups: [
+            {
+              subtitle: "Dòng sản phẩm",
+              contents: [
+                {
+                  text: "Basas"
+                },
+                {
+                  text: "Vintas"
+                },
+                {
+                  text: "Urbas"
+                },
+                {
+                  text: "Pattas"
+                },
+                {
+                  text: "Creas"
+                },
+                {
+                  text: "Track 6"
+                }
+              ]
+            },
+            {
+              subtitle: "Style",
+              contents: [
+                {
+                  text: "High Top"
+                },
+                {
+                  text: "Low Top"
+                },
+                {
+                  text: "Slip-on"
+                }
+              ]
+            },
+            {
+              subtitle: "Tất cả giày",
+              contents: []
+            }
+          ]
+        },
+        {
+          title: "THỜI TRANG & PHỤ KIỆN",
+          groups: [
+            {
+              subtitle: "Nửa trên",
+              contents: [
+                {
+                  text: "Basic Tee"
+                },
+                {
+                  text: "Graphic tee"
+                },
+                {
+                  text: "Sweatshirt"
+                },
+                {
+                  text: "Hoodie"
+                }
+              ]
+            },
+            {
+              subtitle: "Phụ kiện",
+              contents: [
+                {
+                  text: "Nón"
+                },
+                {
+                  text: "Dây giày"
+                },
+                {
+                  text: "Vớ"
+                },
+                {
+                  text: "Ba lô & Túi"
+                }
+              ]
+            },
+            {
+              subtitle: "Xem tất cả",
+              contents: []
+            }
+          ]
+        },
+      ]
+    }
+  },
+  methods: {
+    getLink(gender, category, attribute) {
+      return `/product-list?gender=${gender}&amp;category=${category}&amp;attribute=${attribute}`;
+    }
+  }
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+.menu-list {
+  &-column {
+    width: 260px;
+  }
 
+  &-item {
+    color : #CCCCCC !important;
+
+    &:hover {
+      color: $primary !important;
+    }
+  }
+
+  &-title {
+    color: white !important;
+  }
+}
 </style>

@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import TopHeaderMenuItem from '~/components/TheHeader/TopHeaderMenuItem'
+import TopHeaderMenuItem from '~/components/TheHeader/TheHeaderTopMenuItem'
 export default {
   name: 'TopHeader',
   components: { TopHeaderMenuItem },

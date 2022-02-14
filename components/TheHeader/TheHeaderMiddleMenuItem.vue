@@ -1,12 +1,15 @@
 <template>
-  <a class="menu-item" :href="menuItem.link">
+  <a
+    class="menu-item"
+    :href="menuItem.link"
+    @mouseenter="onMouseEnterHandler"
+    @mouseleave="onMouseLeaveHandler"
+  >
     <b-dropdown
       v-if="menuItem.type === 'menu'"
       ref="dropdown"
       aria-role="list"
-      @mouseenter="onMouseOverHandler"
-      @mouseleave="onMouseOverHandler"
-      @active-change="onActiveChangeHandler"
+      :triggers="['hover']"
     >
       <template #trigger>
         <div aria-haspopup="true" aria-controls="dropdown-menu">
@@ -22,8 +25,10 @@
             :contents="menuItem.contents"
           />
           <MenuList v-else />
-          <div v-if="menuFooter" class="menu-footer has-text-centered">
-            <a :href="menuFooter.link">{{ menuFooter.text }}</a>
+          <div v-if="menuFooter" class="menu-footer has-text-centered is-size-6 is-italic my-4">
+            <a :href="menuFooter.link">
+              <span v-html="menuFooter.text" />
+            </a>
           </div>
         </div>
       </b-dropdown-item>
@@ -64,15 +69,14 @@ export default {
     }
   },
   methods: {
-    onMouseOverHandler() {
-      if (this.menuDropdownIcon === 'chevron-down') {
-        this.menuDropdownIcon = 'chevron-up'
-      } else {
-        this.menuDropdownIcon = 'chevron-down'
-      }
+    onMouseEnterHandler() {
+      this.menuDropdownIcon = 'chevron-up'
+      this.calcDropdownMenuStyles()
     },
-    onActiveChangeHandler(value) {
-      if (!value) return
+    onMouseLeaveHandler() {
+      this.menuDropdownIcon = 'chevron-down'
+    },
+    calcDropdownMenuStyles() {
       const dropdown = this.$refs.dropdown
       const dropdownMenu = this.$refs.dropdown?.$refs.dropdownMenu
 
@@ -90,7 +94,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .menu-item {
   display: flex;
   flex-direction: row;
@@ -98,5 +102,33 @@ export default {
   align-content: center;
   margin-left: 0.75rem !important;
   margin-right: 0.75rem !important;
+}
+
+a {
+  color: black !important;
+
+  &:hover {
+    color: $primary !important;
+  }
+}
+</style>
+
+<style lang="scss">
+.menu-item {
+  .dropdown-content {
+    width: 100%;
+    background: $dark;
+    cursor: default;
+  }
+}
+
+.menu-footer {
+  a {
+    color: #808080 !important;
+  }
+}
+
+.menu-footer-highlight {
+  color: white;
 }
 </style>

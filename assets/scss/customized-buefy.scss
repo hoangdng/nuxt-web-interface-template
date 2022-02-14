@@ -1,5 +1,5 @@
 // Import Bulma's core
-@import "../../node_modules/bulma/sass/utilities/all";
+@import "~bulma/sass/utilities/all";
 
 // Set your colors
 $primary: #F15E2C;
@@ -104,6 +104,9 @@ $link-invert: $primary-invert;
 $link-focus-border: $primary;
 
 $loading-icon-size: 2rem;
+
+// Image
+$dimensions: [16 24 32 48 64 96 128 260];
 
 // Import Bulma and Buefy styles
 @import "~bulma";

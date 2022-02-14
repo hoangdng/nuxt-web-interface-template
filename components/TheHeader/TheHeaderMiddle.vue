@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import MiddleHeaderMenuItem from '~/components/TheHeader/MiddleHeaderMenuItem';
+import MiddleHeaderMenuItem from '~/components/TheHeader/TheHeaderMiddleMenuItem';
 
 export default {
   name: 'MiddleHeader',
@@ -89,7 +89,7 @@ export default {
       ],
       menuFooter: {
         link: "#",
-        text: "MỌI NGƯỜI THƯỜNG GỌI CHÚNG TÔI LÀ DỨA!"
+        text: "MỌI NGƯỜI THƯỜNG GỌI CHÚNG TÔI LÀ <span class=\"menu-footer-highlight\">DỨA</span> !"
       }
     }
   },
