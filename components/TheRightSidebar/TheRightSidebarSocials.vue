@@ -32,8 +32,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "assets/customized-buefy.scss";
-
 a {
   color: $grey-light;
 }
