@@ -145,8 +145,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "assets/customized-buefy.scss";
-
 @media only screen and (max-width: 768px) {
   .reverse-flex-direction{
     flex-direction: column;
