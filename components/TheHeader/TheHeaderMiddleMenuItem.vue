@@ -34,9 +34,9 @@
       </b-dropdown-item>
     </b-dropdown>
 
-    <span v-else-if="menuItem.type === 'text'" :href="menuItem.link">{{
-      menuItem.text
-    }}</span>
+    <span v-else-if="menuItem.type === 'text'" :href="menuItem.link">
+      {{ menuItem.text }}
+    </span>
 
     <figure v-else class="image">
       <img :src="require(`~/assets/img/${menuItem.imageSrc}`)" />
@@ -126,9 +126,9 @@ a {
   a {
     color: #808080 !important;
   }
-}
 
-.menu-footer-highlight {
-  color: white;
+  &-highlight {
+    color: white;
+  }
 }
 </style>

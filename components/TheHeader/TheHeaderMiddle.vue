@@ -5,13 +5,15 @@
         <img src="~/assets/img/brand-logo.svg" />
       </figure>
     </div>
-    <div class="level-item has-text-weight-bold is-size-5 has-text-black">
-      <MiddleHeaderMenuItem
-        v-for="(menuItem, key) in menuList"
-        :key="key"
-        :menu-item="menuItem"
-        :menu-footer="menuFooter"
-      />
+    <div class="level-item has-text-weight-bold is-size-5 has-text-black is-align-items-end">
+      <template v-for="(menuItem, key) in menuList">
+        <MiddleHeaderMenuItem
+          :key="key"
+          :menu-item="menuItem"
+          :menu-footer="menuFooter"
+        />
+        <div v-if="key != menuList.length - 1" :key="`divider-${key}`" class="menu-item-divider" />
+      </template>
     </div>
     <div class="level-right">
       <b-field>
@@ -99,5 +101,12 @@ export default {
 <style scoped lang="scss">
 .has-text-black {
   color: #000000;
+}
+</style>
+
+<style>
+.menu-item-divider {
+  border-right: #e3e2e2 2px solid;
+  height: 23px;
 }
 </style>
