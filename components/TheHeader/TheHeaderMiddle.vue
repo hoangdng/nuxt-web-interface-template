@@ -1,21 +1,21 @@
 <template>
-  <nav class="level mx-6 my-0 py-4">
-    <div class="level-left">
-      <figure class="image ml-6 pl-6">
-        <img src="~/assets/img/brand-logo.svg" />
-      </figure>
+  <nav class="columns mx-6 my-0 py-4">
+    <div class="column is-1 is-flex is-flex-direction-column is-justify-content-center">
+      <img src="~/assets/img/brand-logo.svg" width="50px" />
     </div>
-    <div class="level-item has-text-weight-bold is-size-5 has-text-black is-align-items-end">
-      <template v-for="(menuItem, key) in menuList">
-        <MiddleHeaderMenuItem
-          :key="key"
-          :menu-item="menuItem"
-          :menu-footer="menuFooter"
-        />
-        <div v-if="key != menuList.length - 1" :key="`divider-${key}`" class="menu-item-divider" />
-      </template>
+    <div class="column is-flex is-flex-direction-column is-justify-content-center">
+      <div class="is-flex is-flex-direction-row is-justify-content-center has-text-weight-bold is-size-5 has-text-black is-align-items-baseline">
+        <template v-for="(menuItem, key) in menuList">
+          <TheHeaderMiddleMenuItem
+            :key="key"
+            :menu-item="menuItem"
+            :menu-footer="menuFooter"
+          />
+          <div v-if="key != menuList.length - 1" :key="`divider-${key}`" class="menu-item-divider" />
+        </template>
+      </div>
     </div>
-    <div class="level-right">
+    <div class="column is-3-desktop is-2-widescreen p-0 is-flex is-flex-direction-column is-justify-content-center">
       <b-field>
         <b-input
           placeholder="Tìm kiếm"
@@ -30,11 +30,11 @@
 </template>
 
 <script>
-import MiddleHeaderMenuItem from '~/components/TheHeader/TheHeaderMiddleMenuItem';
+import TheHeaderMiddleMenuItem from '~/components/TheHeader/TheHeaderMiddleMenuItem';
 
 export default {
-  name: 'MiddleHeader',
-  components: { MiddleHeaderMenuItem },
+  name: 'TheHeaderMiddle',
+  components: { TheHeaderMiddleMenuItem },
   data() {
     return {
       menuList: [

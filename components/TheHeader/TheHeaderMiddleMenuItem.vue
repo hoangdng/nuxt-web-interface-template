@@ -49,7 +49,7 @@ import MenuThumbnail from '~/components/TheHeader/TheHeaderMenuLists/MenuThumbna
 import MenuList from '~/components/TheHeader/TheHeaderMenuLists/MenuList'
 
 export default {
-  name: 'MiddleHeaderMenuItem',
+  name: 'TheHeaderMiddleMenuItem',
   components: { MenuThumbnail, MenuList },
   props: {
     menuItem: {

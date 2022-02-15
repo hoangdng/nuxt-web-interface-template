@@ -2,7 +2,7 @@
   <nav class="level has-background-dark has-text-white is-size-7 px-6 py-1 m-0">
     <div class="level-left" />
     <div class="level-right">
-      <TopHeaderMenuItem
+      <TheHeaderTopMenuItem
         v-for="menuItem in menuList"
         :key="menuItem.key"
         class="level-item ml-3"
@@ -17,10 +17,10 @@
 </template>
 
 <script>
-import TopHeaderMenuItem from '~/components/TheHeader/TheHeaderTopMenuItem'
+import TheHeaderTopMenuItem from '~/components/TheHeader/TheHeaderTopMenuItem'
 export default {
-  name: 'TopHeader',
-  components: { TopHeaderMenuItem },
+  name: 'TheHeaderTop',
+  components: { TheHeaderTopMenuItem },
   data() {
     return {
       menuList: [

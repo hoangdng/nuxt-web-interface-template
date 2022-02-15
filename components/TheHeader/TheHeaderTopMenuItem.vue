@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: 'TopHeaderMenuItem',
+  name: 'TheHeaderTopMenuItem',
   props: {
     altText: {
       type: String,

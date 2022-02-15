@@ -25,7 +25,7 @@
 
 <script>
 export default {
-  name: 'BottomHeader',
+  name: 'TheHeaderBottom',
   data() {
     return {
       carousels: [
