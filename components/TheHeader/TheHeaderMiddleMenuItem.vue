@@ -24,8 +24,8 @@
             v-if="menuItem.menuType === 'thumbnail'"
             :contents="menuItem.contents"
           />
-          <MenuList v-else />
-          <div v-if="menuFooter" class="menu-footer has-text-centered is-size-6 is-italic my-4">
+          <MenuList v-else :menu-list="menuItem.contents" />
+          <div v-if="menuFooter" class="menu-footer">
             <a :href="menuFooter.link">
               <span v-html="menuFooter.text" />
             </a>
@@ -54,12 +54,11 @@ export default {
   props: {
     menuItem: {
       required: true,
-      type: Object,
     },
     menuFooter: {
       required: false,
       type: Object,
-      default: null,
+      default: null
     },
   },
   data() {
@@ -123,6 +122,12 @@ a {
 }
 
 .menu-footer {
+  text-align: center !important;
+  font-size: 1rem;
+  font-style: italic;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
   a {
     color: #808080 !important;
   }

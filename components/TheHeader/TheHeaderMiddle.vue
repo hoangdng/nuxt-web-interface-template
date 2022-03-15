@@ -1,5 +1,5 @@
 <template>
-  <nav class="columns mx-6 my-0 py-4">
+  <nav class="header-middle columns mx-6 my-0 py-4">
     <div class="column is-1 is-flex is-flex-direction-column is-justify-content-center">
       <img src="~/assets/img/brand-logo.svg" width="50px" />
     </div>
@@ -35,66 +35,16 @@ import TheHeaderMiddleMenuItem from '~/components/TheHeader/TheHeaderMiddleMenuI
 export default {
   name: 'TheHeaderMiddle',
   components: { TheHeaderMiddleMenuItem },
-  data() {
-    return {
-      menuList: [
-        {
-          type: 'menu',
-          menuType: 'thumbnail',
-          text: 'SẢN PHẨM',
-          link: '#',
-          contents: [
-            {
-              imageSrc: "menu-nam.jpg",
-              imageAlt: "menu nam",
-              text: "CHO NAM"
-            },
-            {
-              imageSrc: "menu-nu.jpg",
-              imageAlt: "menu-nu",
-              text: "CHO NỮ"
-            },
-            {
-              imageSrc: "menu-sale-off.jpg",
-              imageAlt: "menu-sale-off",
-              text: "OUTLET SALE"
-            },
-            {
-              imageSrc: "menu-phu-kien.jpg",
-              imageAlt: "menu-phu-kien",
-              text: "THỜI TRANG & PHỤ KIỆN"
-            }
-          ]
-        },
-        {
-          type: 'menu',
-          menuType: 'list',
-          text: 'NAM',
-          link: '#'
-        },
-        {
-          type: 'menu',
-          menuType: 'list',
-          text: 'NỮ',
-          link: '#',
-        },
-        {
-          type: 'text',
-          text: 'SALE OFF',
-          link: '#',
-        },
-        {
-          type: 'image',
-          imageSrc: 'discover-you.svg',
-          link: '#',
-        },
-      ],
-      menuFooter: {
-        link: "#",
-        text: "MỌI NGƯỜI THƯỜNG GỌI CHÚNG TÔI LÀ <span class=\"menu-footer-highlight\">DỨA</span> !"
-      }
+  props: {
+    menuList: {
+      required: true,
+      type: Array
+    },
+    menuFooter: {
+      required: true,
+      type: Object
     }
-  },
+  }
 }
 </script>
 
@@ -104,9 +54,15 @@ export default {
 }
 </style>
 
-<style>
+<style lang="scss">
 .menu-item-divider {
   border-right: #e3e2e2 2px solid;
   height: 23px;
+}
+
+.header-middle {
+  @include touch {
+    display: none !important;
+  }
 }
 </style>

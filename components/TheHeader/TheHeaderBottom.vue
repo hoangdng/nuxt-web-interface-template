@@ -10,12 +10,12 @@
       :repeat="true"
       :pause-hover="false"
     >
-      <b-carousel-item v-for="(carousel, i) in carousels" :key="i">
+      <b-carousel-item v-for="(content, key) in flashContents" :key="key">
         <section class="level">
           <div
             class="level-item is-size-6 is-uppercase is-italic has-text-weight-semibold has-text-centered my-1"
           >
-            <span>{{ carousel.title }}</span>
+            <span>{{ content.text }}</span>
           </div>
         </section>
       </b-carousel-item>
@@ -26,15 +26,12 @@
 <script>
 export default {
   name: 'TheHeaderBottom',
-  data() {
-    return {
-      carousels: [
-        { title: 'BUY 2 GET 10% OFF - ÁP DỤNG VỚI TẤT CẢ BASIC TEE' },
-        { title: 'FREE SHIPPING VỚI HOÁ ĐƠN TỪ 800K !' },
-        { title: 'BUY MORE PAY LESS - ÁP DỤNG KHI MUA PHỤ KIỆN' },
-      ],
+  props: {
+    flashContents: {
+      required: true,
+      type: Array
     }
-  },
+  }
 }
 </script>
 

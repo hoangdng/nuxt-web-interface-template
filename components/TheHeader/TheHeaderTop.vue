@@ -1,9 +1,9 @@
 <template>
-  <nav class="level has-background-dark has-text-white is-size-7 px-6 py-1 m-0">
+  <nav class="header-top level has-background-dark has-text-white is-size-7 px-6 py-1 m-0">
     <div class="level-left" />
     <div class="level-right">
       <TheHeaderTopMenuItem
-        v-for="menuItem in menuList"
+        v-for="menuItem in functionalMenuList"
         :key="menuItem.key"
         class="level-item ml-3"
         :icon="menuItem.icon"
@@ -21,46 +21,19 @@ import TheHeaderTopMenuItem from '~/components/TheHeader/TheHeaderTopMenuItem'
 export default {
   name: 'TheHeaderTop',
   components: { TheHeaderTopMenuItem },
-  data() {
-    return {
-      menuList: [
-        {
-          key: 'order-tracking',
-          icon: require('~/assets/img/order-tracking.svg'),
-          title: 'Tra cứu đơn hàng',
-          href: '#',
-          isShowNumberBadge: false
-        },
-        {
-          key: 'store-location',
-          icon: require('~/assets/img/store-location.svg'),
-          title: 'Tìm cửa hàng',
-          href: '#',
-          isShowNumberBadge: false
-        },
-        {
-          key: 'favourite-heart',
-          icon: require('~/assets/img/favourite-heart.svg'),
-          title: 'Yêu thích',
-          href: '#',
-          isShowNumberBadge: false
-        },
-        {
-          key: 'log-in',
-          icon: require('~/assets/img/log-in.svg'),
-          title: 'Đăng nhập',
-          href: '#',
-          isShowNumberBadge: false
-        },
-        {
-          key: 'cart',
-          icon: require('~/assets/img/cart.svg'),
-          title: 'Giỏ hàng',
-          href: '#',
-          isShowNumberBadge: true
-        },
-      ],
+  props: {
+    functionalMenuList: {
+      required: true,
+      type: Array
     }
-  },
+  }
 }
 </script>
+
+<style lang="scss">
+.header-top {
+  @include touch {
+    display: none !important;
+  }
+}
+</style>
