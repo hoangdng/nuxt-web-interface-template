@@ -1,22 +1,6 @@
 <template>
   <div>
-        <nav
-          class="navbar header has-shadow is-primary"
-          role="navigation"
-          aria-label="main navigation"
-        >
-          <div class="navbar-brand">
-            <a class="navbar-item" href="/">
-              <img src="~assets/buefy.png" alt="Buefy" height="28"/>
-            </a>
-
-            <div class="navbar-burger">
-              <span/>
-              <span/>
-              <span/>
-            </div>
-          </div>
-        </nav>
+    <TheHeader />
 
     <section class="main-content columns">
       <TheRightSidebar/>
@@ -35,13 +19,17 @@
         <Nuxt />
       </div>
     </section>
+    
     <TheFooter/>
   </div>
 </template>
 
 <script>
+import TheHeader from "~/components/TheHeader/TheHeader";
+
 export default {
   name: 'DefaultLayout',
+  components: { TheHeader },
   data() {
     return {
       items: [
