@@ -2,6 +2,7 @@
   <div>
     <TheHeader />
     <TheRightSidebar />
+    <Nuxt />
     <TheFooter />
   </div>
 </template>
