@@ -1,8 +1,9 @@
 <template>
   <div>
-    <TheHeader />
-    <TheRightSidebar />
-    <TheFooter />
+    <TheHeader/>
+    <Nuxt/>
+    <TheRightSidebar/>
+    <TheFooter/>
   </div>
 </template>
 
@@ -13,6 +14,6 @@ import TheFooter from '~/components/TheFooter'
 
 export default {
   name: 'DefaultLayout',
-  components: { TheHeader, TheRightSidebar, TheFooter }
+  components: {TheHeader, TheRightSidebar, TheFooter}
 }
 </script>

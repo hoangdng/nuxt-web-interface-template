@@ -18,16 +18,19 @@
         No other internal dependency
       </card>
     </div>
+    <ListBestSeller/>
   </section>
 </template>
 
 <script>
 import Card from '~/components/Card'
+import ListBestSeller from "~/components/HomePage/ListBestSeller";
 
 export default {
   name: 'IndexPage',
   components: {
     Card,
+    ListBestSeller
   },
 }
 </script>
