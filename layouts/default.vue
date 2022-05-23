@@ -1,6 +1,7 @@
 <template>
   <div>
     <TheHeader />
+    <Nuxt/>
     <TheRightSidebar />
     <TheFooter />
   </div>
