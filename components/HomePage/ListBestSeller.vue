@@ -7,7 +7,7 @@
         is-uppercase
         is-size-4
         has-text-centered
-        mb-4
+        my-5
     ">
       Best seller
     </h1>
