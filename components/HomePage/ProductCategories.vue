@@ -5,7 +5,7 @@
       has-text-black
       has-text-weight-bold
       is-uppercase
-      is-size-3
+      is-size-4
       mb-5">
       Danh mục mua hàng
     </h1>
