@@ -5,6 +5,11 @@
       <SpecialCollections />
       <ProductCategories />
       <ListBestSeller />
+    </section>
+    <div class="hero">
+      <b-image class="image" src="https://ananas.vn/wp-content/uploads/Banner_Clothing.jpg" alt="ananas banner" />
+    </div>
+    <section class="section">
       <SocialAndNews />
     </section>
   </div>
