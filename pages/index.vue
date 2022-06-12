@@ -1,15 +1,21 @@
 <template>
   <section class="section">
-    <SocialAndNews/>
+    <ProductCategories />
+    <ListBestSeller />
+    <SocialAndNews />
   </section>
 </template>
 
 <script>
+import ListBestSeller from "~/components/HomePage/ListBestSeller";
+import ProductCategories from "~/components/HomePage/ProductCategories";
 import SocialAndNews from "~/components/HomePage/SocialAndNews";
 
 export default {
-  name: 'IndexPage',
+  name: "IndexPage",
   components: {
+    ListBestSeller,
+    ProductCategories,
     SocialAndNews
   },
 }
